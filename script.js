@@ -1,35 +1,50 @@
 "use strict";
 
-// console.log(document.querySelector('.text').textContent);
-// document.querySelector('.text').textContent = '🥳 Correct Number!!';
-// document.querySelector('.question-mark').textContent = 13;
-// document.querySelector('.question-mark').textContent = 13;
-
-// document.querySelector('.display-number').value = 19;
-// console.log(document.querySelector('.display-number').value);
-
 let secretnumber = Math.trunc(Math.random() * 20)+1;
-console.log(secretnumber);
-let topScore = 0;
+// console.log(secretnumber);
 let currscore = 20;
+let topScore = 0;
+let flag = true;
+
+const displayText = function(message){
+    document.querySelector('.text').textContent = message;
+}
+
+const displayQuestionMark = function(message){
+    document.querySelector('.question-mark').textContent = message;
+}
+
+const styleBody = function(message){
+    document.querySelector('body').style.backgroundColor = message;
+}
+
+const displayScore = function(message){
+    document.querySelector('.score').textContent = message;
+}
+
 document.querySelector('.check').addEventListener('click',function(){
     if(currscore == 1){
-        document.querySelector('.text').textContent = "😶‍🌫️ You lost!";
-        document.querySelector('.score').textContent = --currscore;
+        styleBody('#36122B');
+        displayText("😶‍🌫️ You lost!");
+        displayQuestionMark(secretnumber);
+        displayScore(--currscore);
         document.querySelector('.lose').play();
     }
-    else if(currscore > 1){
+    else if(currscore > 1 && flag === true){
         const guess = Number(document.querySelector('.display-number').value);
         
         if(guess < 1 || guess > 20){
-            document.querySelector('.text').textContent = "🚫 Enter Valid Number";
+            displayText("🚫 Enter Valid Number");
         }
         else if(guess === secretnumber){
             
-            document.querySelector('.text').textContent = "🥳 Correct Number";
-            document.querySelector('.question-mark').textContent = guess;
+            styleBody('#082F3A');
+            displayText("🥳 Correct Number");
+            displayQuestionMark(guess);
 
             document.querySelector('.win').play();
+            flag = false;
+            
     
             topScore = Number(document.querySelector('.highscore').textContent);
             // const currscore = Number(document.querySelector('.score').textContent)
@@ -40,23 +55,29 @@ document.querySelector('.check').addEventListener('click',function(){
         }
         else{
             if(guess < secretnumber){
-                document.querySelector('.text').textContent = "📉 Too Low!";
+                displayText("📉 Too Low!");
             }
             else{
-                document.querySelector('.text').textContent = "📈 Too High!";
+                displayText("📈 Too High!");
             }
-            // document.querySelector('.score').textContent = Number(document.querySelector('.score').textContent)-1;
-            document.querySelector('.score').textContent = --currscore;
+            // displayScore(Number(document.querySelector('.score').textContent)-1);
+            displayScore(--currscore);
         }
     }
 })
 
+//the below code executes when we click on again
 document.querySelector('.again').addEventListener('click',function(){
-    document.querySelector('.score').textContent = "20";
-    currscore = 20;
-    document.querySelector('.question-mark').textContent = "?";
+
+    styleBody('rgb(43, 42, 42)');
+    displayQuestionMark("?");
+    displayText("Start guessing...");
+
+    displayScore("20");
     secretnumber = Math.trunc(Math.random() * 20)+1;
-    document.querySelector('.text').textContent = "Start guessing...";
     document.querySelector('.display-number').value = "";
+
+    currscore = 20;
+    flag = true;
 })
 
