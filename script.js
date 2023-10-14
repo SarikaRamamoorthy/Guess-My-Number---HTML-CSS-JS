@@ -22,7 +22,7 @@ const displayScore = function(message){
     document.querySelector('.score').textContent = message;
 }
 
-document.querySelector('.check').addEventListener('click',function(){
+const checkingWin = function(){
     if(currscore == 1){
         styleBody('#36122B');
         displayText("😶‍🌫️ You lost!");
@@ -64,10 +64,9 @@ document.querySelector('.check').addEventListener('click',function(){
             displayScore(--currscore);
         }
     }
-})
+}
 
-//the below code executes when we click on again
-document.querySelector('.again').addEventListener('click',function(){
+const playAgain = function(){
 
     styleBody('rgb(43, 42, 42)');
     displayQuestionMark("?");
@@ -79,4 +78,22 @@ document.querySelector('.again').addEventListener('click',function(){
 
     currscore = 20;
     flag = true;
+}
+
+document.querySelector('.check').addEventListener('click',checkingWin);
+
+document.addEventListener('keydown',function(e){
+    console.log(e.key);
+    if(e.key === 'Enter'){
+        checkingWin();
+    }
+});
+
+//the below code executes when we click on again
+document.querySelector('.again').addEventListener('click',playAgain);
+
+document.addEventListener('keydown',function(e){
+    if(e.key === 'Escape'){
+        playAgain();
+    }
 })
