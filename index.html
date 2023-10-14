@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess My Number!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cssreset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="nav">
+
+            <div class="again">
+                <a href="#">Again!</a>
+            </div>
+
+            <p class="number-boundary">&lt; Between 1 and 20 &gt;</p>
+
+        </div>
+
+        <!-- <div class="line"></div> -->
+
+        <div class="decor">
+
+            <div class="guess">
+                <h1>Guess My Number!</h1>
+            </div>
+
+            <div class="question-mark">
+                <h2>?</h2>
+            </div>
+
+        </div>
+
+        <div class="board">
+
+            <div class="point">  
+
+                <div class="number">
+                    <input type="number" class="display-number" min="1" max="20">
+                </div>
+                
+                <div class="check">
+                    <a href="#">Check!</a>
+                </div>
+
+            </div>
+
+            <div class="score-board">
+                <div class="text">
+                    <h3>Start guessing...</h3>
+                </div>
+                
+                <div class="score-card">
+                    <div class="scorelabel">
+                        <h3>💯 Score:&nbsp;</h3>
+                    </div>
+                    <div class="score">
+                        <h3>20</h3>
+                    </div>
+                </div>
+
+                <div class="highscore-board">
+                    <div class="high-scorelabel">
+                        <h3>🏅 Highscore:&nbsp;</h3>
+                    </div>
+                    <div class="highscore">
+                        <h3>0</h3>
+                    </div>
+                </div>
+
+            </div>
+                
+        </div>
+
+        <audio src="res/video-game-win.mp3" class="win"></audio>
+        <audio src="res/lose.wav" class="lose"></audio>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

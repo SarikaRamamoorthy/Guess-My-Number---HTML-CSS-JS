@@ -1,0 +1,168 @@
+::selection {
+    background-color: white;
+    color: black;
+}
+
+html {
+    background-color:  rgb(43, 42, 42);
+}
+body {
+    height:95vh;
+    color:white;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.container {
+    width: min-content;
+    margin-left: auto ;
+    margin-right: auto;
+}
+
+.nav {
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right:auto;
+        
+        width:1024px;
+        
+        display: flex;
+        justify-content: space-between;
+    }
+    
+        .again {
+            margin-bottom: 25px;
+            padding:25px 15px;
+            font-size: 1.5em;
+
+            background-color: white;
+            
+            box-sizing: border-box;
+        }
+
+            .again:active{
+                scale: 0.9;
+            }
+
+            a {
+                display: block;
+                color: rgb(43, 42, 42);
+            }
+
+    /* .line{
+        z-index: -1;
+        position: absolute;
+        top: 20rem;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        
+        width:1024px;
+        height: 0.4rem;
+        background-color: white;
+    } */
+
+    .decor {        
+        text-align: center;
+        font-size: 3em;
+        
+    }
+    
+    .guess {
+            margin-left: auto;
+            margin-right:auto;
+            margin-top: 30px;
+            padding-top: 30px;
+            
+            width:1024px;
+        }
+        
+        .question-mark {
+            margin-top: 40px;
+            margin-left: auto;
+            margin-right:auto;
+
+            padding: 20px 30px;
+            padding-left: 40px;
+
+            height: fit-content;
+            width: fit-content;
+            
+            font-size: 1.5em;
+            background-color: white;
+            color:rgb(43, 42, 42);
+        }
+    
+    .board{
+        margin-top: 70px;
+        margin-left: auto;
+        margin-right: auto;
+
+        display: flex;
+        justify-content: space-between ;
+
+        width: 1024px;
+
+        box-sizing: border-box;
+    }
+
+        .point{   
+            margin-left : 75px;
+        }
+
+        input[type = number]{
+            padding: 0px 15px 0px 15px;
+            text-align: center;
+            margin-bottom: 50px;
+
+            width: 200px;
+            height: 100px;
+
+            font-size: 50px;
+            font-family: 'Press Start 2P', cursive;
+
+            background-color:rgb(43, 42, 42);
+            color: white;
+
+            border: 5px;
+            border-style: solid;
+            border-color: white;
+        }
+
+        .check{
+            padding:25px 15px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.5em;
+
+            background-color: white;
+            width: fit-content;
+            
+            box-sizing: border-box;
+        }
+
+        .check:active {
+            scale: 0.9;
+        }
+
+    .score-board {
+        padding-top: 20px;
+        font-size: 1.5rem;
+    }
+
+        .text {
+            margin-bottom: 100px;
+        }
+
+        .score-card {
+            margin-bottom: 30px;
+            display: flex;
+        }
+
+    .highscore-board {
+        display: flex;
+    }
+
+        .high-score {
+            display: flex;
+        }
