@@ -80,4 +80,3 @@ document.querySelector('.again').addEventListener('click',function(){
     currscore = 20;
     flag = true;
 })
-
